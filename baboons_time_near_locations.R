@@ -17,7 +17,7 @@ metadata_file <- '~/Dropbox/Teaching/VTK_2025/mpala_data_2025/Baboons MBRP Mpala
 out_dir <- '~/Dropbox/Teaching/VTK_2025/mpala_data_2025/'
 
 #group you want to get data for - either 'chartreuse' or 'copperlilac'
-group <- 'chartreuse'
+group <- 'copperlilac'
 
 #max radius to consider the individual near the location (in meters)
 radius <- 5
@@ -78,6 +78,9 @@ periods_of_proximity$group <- metadata$animal.group.id[match(periods_of_proximit
 #get timestamps in UTC for start and end
 periods_of_proximity$t0_UTC <- timestamps[periods_of_proximity$t0]
 periods_of_proximity$tf_UTC <- timestamps[periods_of_proximity$tf]
+
+#store the radius used for the calculation
+periods_of_proximity$radius_used_in_calc <- radius
 
 save(file = paste0(out_dir, group,'_periods_of_proximity.RData'), list = c('periods_of_proximity'))
 
