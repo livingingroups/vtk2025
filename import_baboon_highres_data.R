@@ -14,7 +14,7 @@ Sys.setenv(TZ='UTC')
 #----PARAMS----
 
 #path to file containing all gps data from movebank
-gpsdat_file <- '~/Dropbox/Teaching/VTK_2025/mpala_data_2025/Baboons MBRP Mpala Kenya.csv'
+gpsdat_file <- '~/Dropbox/Teaching/VTK_2025/mpala_data_2025/Baboons MBRP Mpala Kenya_recent.csv'
 
 #path to file containing metadata from movebank
 metadata_file <- '~/Dropbox/Teaching/VTK_2025/mpala_data_2025/Baboons MBRP Mpala Kenya-reference-data.csv'
