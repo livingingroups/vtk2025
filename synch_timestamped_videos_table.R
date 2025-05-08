@@ -6,7 +6,7 @@
 path_to_file <- '~/Dropbox/Teaching/VTK_2025/mpala_data_2025/Baboon_Timestamped_Videos - Data.csv'
 
 #where to store the output file (with synched times)
-output_file_name <- '~/Dropbox/Teaching/VTK_2025/mpala_data_2025/baboon_timestamped_videos_synched.csv'
+output_file_name <- '~/Dropbox/Teaching/VTK_2025/mpala_data_2025/baboon_timestamped_videos_synched.RData'
 
 #----FUNCS-----
 
