@@ -30,7 +30,7 @@ kmls_folder <- '~/Dropbox/Teaching/VTK_2025/KMLs_1s/'
 
 #dates when we want highres data from target groups
 highres_start_date <- '2025-04-27'
-highres_end_date <- '2025-05-09'
+highres_end_date <- '2025-05-10'
 highres_start_time <- '03:00:00'
 highres_end_time <- '04:59:59'
 
@@ -116,6 +116,12 @@ ids$group <- metadata$animal.group.id[match(ids$code, metadata$tag.id)]
 ids$sex <- metadata$animal.sex[match(ids$code, metadata$tag.id)]
 ids$mass <- metadata$animal.mass[match(ids$code, metadata$tag.id)]
 save(file= paste0(highres_path, 'copperlilac_xy_level0.RData'), list = c('timestamps','xs','ys','lats','lons','ids'))
+
+#convert to level 1
+load(paste0(highres_path, 'chartreuse_xy_level0.RData'))
+cocomo::preprocess_gps_level0_to_level1(input_file_path = paste0(highres_path, 'chartreuse_xy_level0.RData'), output_file_path = paste0(highres_path, 'chartreuse_xy_level1.RData'))
+cocomo::preprocess_gps_level0_to_level1(input_file_path = paste0(highres_path, 'copperlilac_xy_level0.RData'), output_file_path = paste0(highres_path, 'copperlilac_xy_level1.RData'))
+
 
 #make kmls for each day
 print('generating KMLs for each day')
