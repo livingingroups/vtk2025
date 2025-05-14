@@ -31,8 +31,10 @@ kmls_folder <- '~/Dropbox/Teaching/VTK_2025/KMLs_1s/'
 #dates when we want highres data from target groups
 highres_start_date <- '2025-04-27'
 highres_end_date <- '2025-05-10'
-highres_start_time <- '03:00:00'
-highres_end_time <- '04:59:59'
+highres_start_time <- '02:59:42' #in UTC not GPS time!
+highres_end_time <- '04:59:41' #in UTC not GPS time!
+
+utc_offset <- 18 #UTC offset from GPS time - needed to convert from GPS time to UTC because eObs tags record GPS time and not UTC
 
 #----MAIN----
 
@@ -62,6 +64,9 @@ rm('alldat')
 
 #convert timestamps to POSIX
 dat$timestamp <- as.POSIXct(dat$timestamp, tz = 'UTC')
+
+#convert to UTC
+dat$timestamp <- dat$timestamp - utc_offset
 
 #Change group names from old names to new color names
 metadata$animal.group.id[which(metadata$animal.group.id=='Clifford')] <- 'Copper'
