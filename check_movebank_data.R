@@ -1,5 +1,7 @@
 #check presence of a certain group's data for a certain date
 
+library(lubridate)
+
 #path to file containing all gps data from movebank
 gpsdat_file <- '~/Dropbox/Teaching/VTK_2025/mpala_data_2025/Baboons MBRP Mpala Kenya.csv'
 
